@@ -1,0 +1,27 @@
+﻿@using UserManager.Entities
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table style="width:100%;margin:50px;">
+    <tr style="font-weight:bold;">
+
+
+        <td>Prices</td>
+        
+
+    </tr>
+    @foreach (Price item in (List<Price>)ViewData["items"])
+    {
+        <tr>
+            <td>@item.BookPrice</td>
+            <td>
+            </td>
+
+        </tr>
+    }
+
+</table>

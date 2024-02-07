@@ -1,0 +1,63 @@
+﻿@model UserManager.ViewModels.Users.EditVM
+@using UserManager.Entities;
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    User item = (User)ViewData["item"];
+}
+
+<td>
+    <fieldset>
+        <legend> Form </legend>
+        <form action="/User/Edit" method="post">
+            @Html.HiddenFor(m=>m.Id)
+            <table>
+                <tr>
+                    <td> @Html.LabelFor(m=>m.Username) </td>
+                    <td>
+                        @Html.TextBoxFor(m=>m.Username)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(m=>m.Username, null , new {style = "color:red" })
+                    </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(m=>m.Password) </td>
+                    <td>
+                        @Html.TextBoxFor(m=>m.Password)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(m=>m.Password,null,new {style = "color:red" })
+                    </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(m=>m.FirstName) </td>
+                    <td>
+                        @Html.TextBoxFor(m=>m.FirstName)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(m=>m.FirstName , null,new {style = "color:red" })
+                    </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(m=>m.LastName)</td>
+                    <td>
+                        @Html.TextBoxFor(m=>m.LastName)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(m=>m.LastName , null , new {style = "color:red" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Save" />
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+    </fieldset>
+</td>
+

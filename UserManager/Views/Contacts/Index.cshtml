@@ -1,0 +1,35 @@
+﻿@using UserManager.Entities;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a href="/Contacts/Edit"> + ADD NEW CONTACT</a>
+<table style="width:100%;margin:50px;">
+    <tr style="font-weight:bold;">
+
+
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td> ..::::..</td>
+
+    </tr>
+    @foreach (Contact i in Model.Items)
+    {
+        <tr>
+
+            <td>@i.FirstName</td>
+            <td>@i.LastName</td>
+            <td>@i.Email</td>
+            <td>
+                <a href="/Phones/Index?id=@i.UserId"> Details </a> &nbsp;
+                <a href="/Contacts/Delete/?id=@i.Id"> Delete </a> &nbsp;
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+

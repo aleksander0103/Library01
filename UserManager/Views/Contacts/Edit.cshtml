@@ -1,0 +1,56 @@
+﻿@model UserManager.ViewModels.Contacts.EditVM
+@using UserManager.Entities;
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Contact item = (Contact)ViewData["item"];
+}
+
+<td>
+    <fieldset>
+        <legend> Form </legend>
+        <form action="/Contacts/Edit" method="post">
+            @Html.HiddenFor(m=>m.UserId)
+            <table>
+                <tr>
+                    <td> @Html.LabelFor(m=>m.FirstName) </td>
+                    <td>
+                        @Html.TextBoxFor(m=>m.FirstName)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(m=>m.FirstName, null , new {style = "color:red" })
+                    </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(m=>m.LastName) </td>
+                    <td>
+                        @Html.TextBoxFor(m=>m.LastName)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(m=>m.LastName,null,new {style = "color:red" })
+                    </td>
+                </tr>
+                <tr>
+                    <td> @Html.LabelFor(m=>m.Email) </td>
+                    <td>
+                        @Html.TextBoxFor(m=>m.Email)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(m=>m.Email , null,new {style = "color:red" })
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Save" />
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+    </fieldset>
+</td>
+

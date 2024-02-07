@@ -1,0 +1,29 @@
+﻿@using UserManager.Entities
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table style="width:100%;margin:50px;">
+    <tr style="font-weight:bold;">
+
+
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td> ..::::..</td>
+
+    </tr>
+    @foreach (Phone item in (List<Phone>)ViewData["items"])
+    {
+        <tr>
+            <td>@item.Number</td>
+            <td>
+            </td>
+
+        </tr>
+    }
+
+</table>
